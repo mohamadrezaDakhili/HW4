@@ -1,8 +1,8 @@
 // answer One question
-function convertDate() {
+function convertDatePersian() {
   let persianDate = moment(document.getElementById("date").value)
     .locale("fa")
-    .format("YYYY/M/D"); // 1367/11/4
+    .format("YYYY/M/D");
   document.getElementById("persianDate").innerHTML =
     "Persian Date :" + persianDate;
 }
@@ -47,6 +47,7 @@ function showText() {
     x.style.display = "none";
   }
 }
+
 // answer four question
 let asiaTime = new Date().toLocaleString("en-US", {
   timeZone: "Asia/Tehran"
@@ -61,6 +62,36 @@ function convertDate() {
   usaTime = new Date(usaTime);
   document.getElementById("dateUSA").innerHTML =
     "USA time: " + usaTime.toLocaleString();
-
 }
+
+// answer five question
+document
+  .getElementById("convertToJalali")
+  .addEventListener("click", function() {
+    let output = "";
+    try {
+      let input = document.getElementById("gregorianInput").value;
+      let m = moment(input);
+      if (m.isValid()) {
+        m.locale("fa");
+        output = m.format("ddd") + " " + m.format("YYYY/MMMM/DD");
+      } else {
+        output = "it is not valid date";
+      }
+    } catch (e) {
+      output = "input is not a date";
+    }
+    document.getElementById("jalaliOutput").innerText = output;
+  });
+  
+  // answer six question
+  function subsetString(string) {
+    let subset = [];
+    for (let i = 0; i < string.length; i++) {
+      for (let n = i + 1; n < string.length + 1; n++) {
+        subset.push(string.slice(i, n));
+      }
+    }
+    document.getElementById("textSubset").innerHTML ="Text = " + subset;
+  };
 
