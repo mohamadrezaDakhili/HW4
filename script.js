@@ -95,3 +95,14 @@ document
     document.getElementById("textSubset").innerHTML ="Text = " + subset;
   };
 
+  // answer seven question
+document.getElementById("btnListArray").addEventListener("click" , function () {
+  const character = {
+      country: 'Iran',
+      capital: 'Tehran',
+      population: '18M'
+    };
+  document.getElementById("textListArray").innerHTML = Object.entries(character);
+});
+
+
