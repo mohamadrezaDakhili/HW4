@@ -47,4 +47,20 @@ function showText() {
     x.style.display = "none";
   }
 }
+// answer four question
+let asiaTime = new Date().toLocaleString("en-US", {
+  timeZone: "Asia/Tehran"
+});
+asiaTime = new Date(asiaTime);
+document.getElementById("dateAsia").innerHTML =
+  "Asia time: " + asiaTime.toLocaleString();
+function convertDate() {
+  let usaTime = new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York"
+  });
+  usaTime = new Date(usaTime);
+  document.getElementById("dateUSA").innerHTML =
+    "USA time: " + usaTime.toLocaleString();
+
+}
 
