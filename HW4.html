@@ -24,20 +24,29 @@
         <div class="col-11 p-4">
             <!-- quiz one -->
             <h5>1- A function to convert Gregorian date into jalali date (YYYY/MM/DD) </h5>
-            <input class="w-25" type="text" id="test" placeholder="please write date Gregorian:1997/2/2">
+            <p>please write date Gregorian</p>
+            <input class="w-25" type="text" id="date" placeholder="Example:1997/2/2">
             <input type="button" value="click convert to jalali date" onclick="convertDate()">
             <p id="persianDate" class="mt-3">Persian Date : </p>
-
             <hr>
             <!-- quiz Two -->
-            <h5>2- A function to combine two or more arrays] and sort the final array</h5>
-            <p>Array One : [1,2,3]</p>
-            <p id="arrTwo">Array Two : [7,8,9]</p>
-            <p id="arrThree">Array Three : [4,5,6]</p>
-            <p id="fullArr"></p>
-            <button onclick="sortArray()">click sort Array</button>
-            <p class="mt-3" id="fullArrSort">Array Sort:</p>
+            <h5>2- A function to get Diff between two dates object</h5>
+            <p>For example:</p>
+            <p>One Date : 2019/5/28 12:02:02</p>
+            <p>Two Date : 2020/7/29 13:03:03</p>
+            <button onclick="showText()">click me for Conver</button>
+            <p class="mt-3" style="display: none;" id="textDate"></p>
             <hr>
+
+
+
+
+
+
+
+
+
+
             <!-- quiz three -->
             <h5>3- Flat an Array of Arrays</h5>
             <p>[1,2,[9,4,[4,7],5],3,1]</p>
@@ -81,6 +90,7 @@
 
 <!-- added js file -->
 <script src="script.js">
+    
 </script>
 
 </html>
