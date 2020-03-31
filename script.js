@@ -22,7 +22,7 @@ function diffTime(dt1, dt2) {
   day = day % 30;
   let year = Math.floor(month / 12);
   month = month % 12;
-// print on tag p
+  // print on tag p
   document.getElementById("textDate").innerHTML =
     "years:" +
     year +
@@ -83,26 +83,78 @@ document
     }
     document.getElementById("jalaliOutput").innerText = output;
   });
-  
-  // answer six question
-  function subsetString(string) {
-    let subset = [];
-    for (let i = 0; i < string.length; i++) {
-      for (let n = i + 1; n < string.length + 1; n++) {
-        subset.push(string.slice(i, n));
-      }
-    }
-    document.getElementById("textSubset").innerHTML ="Text = " + subset;
-  };
 
-  // answer seven question
-document.getElementById("btnListArray").addEventListener("click" , function () {
+// answer six question
+function subsetString(string) {
+  let subset = [];
+  for (let i = 0; i < string.length; i++) {
+    for (let n = i + 1; n < string.length + 1; n++) {
+      subset.push(string.slice(i, n));
+    }
+  }
+  document.getElementById("textSubset").innerHTML = "Text = " + subset;
+}
+
+// answer seven question
+document.getElementById("btnListArray").addEventListener("click", function() {
   const character = {
-      country: 'Iran',
-      capital: 'Tehran',
-      population: '18M'
-    };
-  document.getElementById("textListArray").innerHTML = Object.entries(character);
+    country: "Iran",
+    capital: "Tehran",
+    population: "18M"
+  };
+  document.getElementById("textListArray").innerHTML = Object.entries(
+    character
+  );
 });
 
+// answer eight question
+let library = [
+  {
+    title: "The Road Ahead",
+    author: "bill Gates",
+    libraryID: 1254
+  },
+  {
+    title: "Wallter Isaacson",
+    author: "Steve Jobs",
+    libraryID: 4264
+  },
+  {
+    title: "The Final Book of The hunger Games",
+    author: "Suzanne Collins",
+    libraryID: 3245
+  }
+];
 
+function sortArray() {
+  library.sort(function(a, b) {
+    return a.libraryID - b.libraryID;
+  });
+  let myJSON = JSON.stringify(library);
+  document.getElementById("arraySort").innerHTML = myJSON;
+}
+// show array not sort
+document.getElementById("arrayList").innerHTML = JSON.stringify(library);
+
+// If we don't want to use JSON.stringify we can use this function to display lists
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+    library[0].title +
+    " " +
+    library[0].author +
+    " " +
+    library[0].libraryID +
+    "<br>" +
+    library[1].title +
+    " " +
+    library[1].author +
+    " " +
+    library[1].libraryID +
+    "<br>" +
+    library[2].title +
+    " " +
+    library[2].author +
+    " " +
+    library[2].libraryID +
+    "<br>";
+}
