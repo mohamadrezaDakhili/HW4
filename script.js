@@ -48,6 +48,15 @@ function showText() {
   }
 }
 
+// answer three question
+array = [
+  {
+    start: new Date("2019/5/28 12:02:02") , 
+    end : new Date("2020/7/29 13:03:03")
+  }
+];
+alert(array)
+
 // answer four question
 let asiaTime = new Date().toLocaleString("en-US", {
   timeZone: "Asia/Tehran"
@@ -157,4 +166,13 @@ function displayCars() {
     " " +
     library[2].libraryID +
     "<br>";
+}
+
+// answer nine question
+let date = new Date();
+document.getElementById("dateTehran").innerHTML ="Date Tehran : "+ date;
+
+function changeTime() {
+  date.setMinutes(date.getMinutes() + 30);
+document.getElementById("newTime").innerHTML = "New Time : " + date;
 }
